@@ -1,10 +1,10 @@
-package com.envapp.demoenvapp;
+package com.exampleapp.demoapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoenvappApplicationTests {
+class DemoappApplicationTests {
 
 	@Test
 	void contextLoads() {
