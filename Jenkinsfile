@@ -3,8 +3,6 @@ pipeline {
         docker {
             image 'maven:3.9.2-eclipse-temurin-20-alpine'
             args '--network=host'
-//            args '-v $HOME/.jenkins/workspace/maven-3.9.2-20-alpine/template-springboot/:/root/app/:rw  -w /root/app'
-//            args '-v $HOME/.jenkins/workspace/JAVA-MAVEN-BUILD/:/root/app/:rw'
         }
     }
     
@@ -12,7 +10,6 @@ pipeline {
         stage('check environment') {
             steps {
                 sh 'mvn -version'
-//                sh 'cd $(pwd)/template-springboot/'
                 sh 'ls -la'
             }
         }
@@ -26,13 +23,13 @@ pipeline {
 
         stage('mvn clean') {
             steps {
-                sh 'mvn -Dmaven.repo.local=/tmp/.m2/repository clean -X'
+                sh 'mvn -Dmaven.repo.local=./.m2/repository clean -X'
             }
         }
 
         stage('mvn install') {
             steps {
-                sh 'mvn -Dmaven.repo.local=/tmp/.m2/repository install'
+                sh 'mvn -Dmaven.repo.local=./.m2/repository install -X'
             }
         }
 
