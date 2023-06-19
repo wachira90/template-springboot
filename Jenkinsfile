@@ -8,7 +8,7 @@ pipeline {
     }
     
     stages {
-        stage('list') {
+        stage('check environment') {
             steps {
                 sh 'mvn -version'
 //                sh 'cd $(pwd)/template-springboot/'
@@ -16,11 +16,30 @@ pipeline {
             }
         }
         
-        stage('Build') {
+        stage('check version') {
             steps {
                 sh 'mvn -version'
+                sh 'java -version'
             }
         }
 
+        stage('mvn clean') {
+            steps {
+                sh 'mvn clean'
+            }
+        }
+
+        stage('mvn install') {
+            steps {
+                sh 'mvn install'
+            }
+        }
+
+        stage('success') {
+            steps {
+                sh 'echo success'
+            }
+        }
+        
     }
 }
