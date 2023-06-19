@@ -2,6 +2,7 @@ pipeline {
     agent {
         docker {
             image 'maven:3.9.2-eclipse-temurin-20-alpine'
+            args '--network=host'
 //            args '-v $HOME/.jenkins/workspace/maven-3.9.2-20-alpine/template-springboot/:/root/app/:rw  -w /root/app'
 //            args '-v $HOME/.jenkins/workspace/JAVA-MAVEN-BUILD/:/root/app/:rw'
         }
