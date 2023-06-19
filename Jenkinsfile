@@ -32,7 +32,7 @@ pipeline {
 
         stage('mvn install') {
             steps {
-                sh 'mvn install'
+                sh 'mvn -Dmaven.repo.local=/tmp/.m2/repository install'
             }
         }
 
