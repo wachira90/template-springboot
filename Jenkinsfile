@@ -25,7 +25,7 @@ pipeline {
 
         stage('mvn clean') {
             steps {
-                sh 'mvn clean -X'
+                sh 'mvn -Dmaven.repo.local=/tmp/.m2/repository clean -X'
             }
         }
 
