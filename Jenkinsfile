@@ -30,8 +30,8 @@ pipeline {
         }
         stage('success') {
             steps {
-                sh "echo success"
-                sh "echo $(date '+%Y%m%d-%H%M%S')"
+                sh 'echo success'
+                echo 'THIS DATE $(date '+%Y%m%d-%H%M%S')'
             }
         }
         
