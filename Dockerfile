@@ -4,7 +4,6 @@ COPY . /app
 RUN mvn clean
 RUN mvn install -DskipTests
 RUN ls -la target/
-
 FROM openjdk:18-jdk
 WORKDIR /app
 EXPOSE 8081
