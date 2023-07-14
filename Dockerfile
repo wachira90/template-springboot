@@ -1,9 +1,10 @@
 FROM maven:3.9.2-eclipse-temurin-20-alpine AS builder
+# FROM maven:3.9.2-eclipse-temurin-20-alpine
 WORKDIR /app
 COPY . /app
 RUN mvn clean
 RUN mvn install -DskipTests
-RUN ls -la target/
+# RUN ls -la target/
 FROM openjdk:18-jdk
 WORKDIR /app
 EXPOSE 8081
